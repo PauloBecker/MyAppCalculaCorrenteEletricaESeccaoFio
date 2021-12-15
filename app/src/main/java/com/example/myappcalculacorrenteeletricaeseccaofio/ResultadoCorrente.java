@@ -25,8 +25,8 @@ public class ResultadoCorrente extends AppCompatActivity {
         fltPotencia = Float.parseFloat(intent.getStringExtra("potencia"));
         fltCorrente = fltPotencia/fltTensao;
 
-        String strResultado = "Olá " + strNome + "!";
-        strResultado = strResultado + "\n" + "Corrente = " + fltCorrente.toString() + " Ampére";
+
+        String strResultado = String.format("Olá %s ! \n Corrente = %.2f Ampéres", strNome, fltCorrente);
 
         if (fltCorrente <= 8 ){
             strResultado = strResultado + "\n" + "Você deve usar um fio com seção 0,5 mm²";
